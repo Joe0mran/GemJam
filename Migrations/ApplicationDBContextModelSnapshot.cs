@@ -15,7 +15,7 @@ partial class ApplicationDBContextModelSnapshot : ModelSnapshot
     // If you encounter a merge conflict in the line below, it means you need to
     // discard one of the migration branches and recreate its migrations on top of
     // the other branch. See https://aka.ms/efcore-docs-migrations-conflicts for more info.
-    public override string LastMigrationId => "20261107160600_SeedCategoryTable2";
+    public override string LastMigrationId => "20261108165932_AddDisplayOrderDataToCategoryTable";
 
     protected override void BuildModel(ModelBuilder modelBuilder)
     {
@@ -34,6 +34,9 @@ partial class ApplicationDBContextModelSnapshot : ModelSnapshot
 
                 SqlServerPropertyBuilderExtensions.UseIdentityColumn(categoryId);
 
+                b.Property<int>("DisplayOrder")
+                    .HasColumnType("int");
+
                 b.Property<string>("Name")
                     .IsRequired()
                     .HasColumnType("nvarchar(max)");
@@ -46,37 +49,44 @@ partial class ApplicationDBContextModelSnapshot : ModelSnapshot
                     new
                     {
                         CategoryId = 1,
+                        DisplayOrder = 1,
                         Name = "Rings"
                     },
                     new
                     {
-                        CategoryId = 2,
-                        Name = "Earings"
-                    },
-                    new
-                    {
                         CategoryId = 3,
+                        DisplayOrder = 2,
                         Name = "Bracelets"
                     },
                     new
                     {
+                        CategoryId = 2,
+                        DisplayOrder = 3,
+                        Name = "Earings"
+                    },
+                    new
+                    {
                         CategoryId = 4,
+                        DisplayOrder = 4,
                         Name = "Necklaces"
                     },
                     new
                     {
                         CategoryId = 5,
+                        DisplayOrder = 5,
                         Name = "Bangles"
                     },
                     new
                     {
-                        CategoryId = 6,
-                        Name = "Piercings"
+                        CategoryId = 7,
+                        DisplayOrder = 6,
+                        Name = "Colliers"
                     },
                     new
                     {
-                        CategoryId = 7,
-                        Name = "Colliers"
+                        CategoryId = 6,
+                        DisplayOrder = 7,
+                        Name = "Piercings"
                     });
             });
 #pragma warning restore 612, 618

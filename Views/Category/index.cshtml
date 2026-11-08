@@ -1,0 +1,9 @@
+@using GemJam.Models
+@model List<Category>
+
+<h1>Category</h1>
+
+@foreach(var category in Model)
+{
+    <p> @category.DisplayOrder : @category.Name </p>
+}
