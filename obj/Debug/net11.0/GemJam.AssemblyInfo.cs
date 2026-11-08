@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GemJam")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a7454d88c0abc61a18b36b7d60f675decbd98bd0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+074179497384bca559b5cbbaa28d9912fc600cbc")]
 [assembly: System.Reflection.AssemblyProductAttribute("GemJam")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GemJam")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
