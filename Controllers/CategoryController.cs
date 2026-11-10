@@ -1,12 +1,11 @@
 using GemJam.Data;
+using GemJam.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace GemJam.Controllers
 {
-    // [Route("api/[controller]")]
-    // [ApiController]
     public class CategoryController : Controller
     {
         private readonly ApplicationDBContext _context;
@@ -14,10 +13,22 @@ namespace GemJam.Controllers
         {
             _context = context;
         }
-        public IActionResult Index()
+        public IActionResult index()
         {
             var categories = _context.Categories.ToList();
-            return View("index", categories);
+            return View(categories);
+        }
+        public IActionResult Create()
+        {
+            return View();
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Create(Category category)
+        {
+            _context.Categories.Add(category);
+            _context.SaveChanges();
+            return RedirectToAction("index");
         }
     }
 }
